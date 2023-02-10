@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+<template id="reporte_orden_trabajo">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+          <div class="article">
+              <div class="page">
+                  <span t-esc="o.date_order.day"/>
+                  <span t-esc="o.date_order.month"/>
+                  <span t-esc="o.date_order.year"/>
+
+                  <span t-field="o.partner_id.name"/>
+
+                  <span t-field="o.invoice_ids.invoice_date"/>
+
+                  <span t-esc="o.partner_id.x_studio_marca"/>
+                  <span t-esc="o.partner_id.x_studio_modelo"/>
+                  <span t-esc="o.partner_id.x_studio_placa"/>
+                  <span t-esc="o.partner_id.x_studio_ao"/>
+                  <span t-esc="o.partner_id.x_studio_color"/>
+
+                  <!-- <span t-field="o.narration"/> -->
+
+
+                      <table>
+                          <t t-foreach="o.order_line" t-as="linea">
+                              <tr>
+                                  <td><span t-esc="linea.product_uom_qty"/></td>
+                                  <td><span t-esc="linea.name"/></td>
+                                  <td><span t-esc="linea.price_total"/></td>
+                              </tr>
+                          </t>
+                      </table>
+
+
+                <t t-foreach="o.tasks_ids" t-as="tarea">
+                    <!-- Interior -->
+                    <t t-if="tarea.x_studio_calefaccin">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_radio">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_bocinas_delanteras">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_bocinas_delanteras_1">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_encendedor">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_cenicero">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_retrovisor">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_cinturones">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_alfombras">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_fundas_de_asientos">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_vidrios_laterales">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_jalador_de_puertas">
+                        <div>x</div>
+                    </t>
+
+                    <!-- Exterior -->
+                    <t t-if="tarea.x_studio_luces_principales">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_stops_intermitentes">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_antena_de_radio">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_limpiabrisas">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_4_tapones_de_vlvulas">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_4_tapaderas_aros">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_placas">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_llantas_de_repuesto">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_carrocera_sin_golpes">
+                        <div>x</div>
+                    </t>
+
+                    <!-- Accesorios -->
+                    <t t-if="tarea.x_studio_silvines">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_stops">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_roll_bar">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_duraliner">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_linex">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_insignias">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_estribos">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_baranda_antigolpe">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_retirar_baranda">
+                        <div>x</div>
+                    </t>
+
+                    <!-- Tapiceria Daniada -->
+                    <t t-if="tarea.x_studio_b">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_r_1">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_d_1">
+                        <div>x</div>
+                    </t>
+
+                    <!-- Limpieza del vehiculo -->
+                    <t t-if="tarea.x_studio_l">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_r_2">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_s">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_cw">
+                        <div>x</div>
+                    </t>
+
+                    <!-- Sensores -->
+                    <t t-if="tarea.x_studio_airbag_bolsa_de_aire == 'ACTIVO'">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_airbag_bolsa_de_aire == 'INACTIVO'">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_motor == 'ACTIVO'">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_motor == 'INACTIVO'">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_frenos_abs == 'ACTIVO'">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_frenos_abs == 'INACTIVO'">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_testigo_esp == 'ACTIVO'">
+                        <div>x</div>
+                    </t>
+                    <t t-if="tarea.x_studio_testigo_esp == 'INACTIVO'">
+                        <div>x</div>
+                    </t>
+
+                    <t t-if="tarea.x_studio_text_field_BkfZ0">
+                        <div>x</div>
+                        <div><span t-field="tarea.x_studio_text_field_BkfZ0"/></div>
+                    </t>
+                </t>
+
+
+              </div>
+          </div>
+        </t>
+    </t>
+</template>
+
+</odoo>
