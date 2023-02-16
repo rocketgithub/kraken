@@ -20,6 +20,11 @@
                     <div>
                         <span t-esc="o.date_order.year"/>
                     </div>
+                    
+                    <!--Hora actual de impresion-->
+                    <div>
+                        <span t-esc="hora_actual()"/>
+                    </div>
                     <!--Nombre de cliente-->
                     <div>
                         <span t-field="o.partner_id.name"/>
