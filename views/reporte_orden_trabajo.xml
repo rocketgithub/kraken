@@ -8,54 +8,242 @@
             <div class="article">
                 <div class="page">
                     
-                     <!--DIA FECHA-->
-                    <div>
+                    <!--DIA FECHA-->
+                    <div style="font-size: 110%; position: absolute; top: 2cm; left: 17cm">
                         <span t-esc="o.date_order.day"/>
                     </div>
                     <!-- MES FECHA-->
-                    <div>
+                    <div style="font-size: 110%; position: absolute; top: 2cm; left: 19cm">
                         <span t-esc="o.date_order.month"/>
                     </div>
-                     <!--ANIO FECHA-->
-                    <div>
+                    <!--ANIO FECHA-->
+                    <div style="font-size: 110%; position: absolute; top: 2cm; left: 21.5cm">
                         <span t-esc="o.date_order.year"/>
                     </div>
                     
                     <!--Hora actual de impresion-->
-                    <div>
+                    <div style="font-size: 80%; position: absolute; top: 3cm; left: 21.5cm">
                         <span t-esc="hora_actual()"/>
                     </div>
+                    
                     <!--Nombre de cliente-->
-                    <div>
+                    <div style="font-size: 90%; position: absolute; top: 4cm; left: 4cm">
                         <span t-field="o.partner_id.name"/>
                     </div>
                     
+                    
                     <!--Fecha de factura-->
-                    <div>
+                    <div style="font-size: 80%; position: absolute; top: 4cm; left: 20cm">
                         <span t-field="o.invoice_ids.invoice_date"/>
                     </div>
                     
-                    <div>
+                    <div style="font-size: 80%; position: absolute; top: 6.5cm; left: 4cm">
                         <span t-esc="o.partner_id.x_studio_marca"/>
                     </div>
                     
-                    <div>
+                    <div style="font-size: 80%; position: absolute; top: 7.2cm; left: 4cm">
                         <span t-esc="o.partner_id.x_studio_modelo"/>
                     </div>
                     
-                    <div>
+                    <div style="font-size: 80%; position: absolute; top: 7.8cm; left: 4cm">
                         <span t-esc="o.partner_id.x_studio_placa"/>
                     </div>
                     
                     <!--ANIO PLACA-->
-                    <div>
+                    <div style="font-size: 80%; position: absolute; top: 8.5cm; left: 4cm">
                         <span t-esc="o.partner_id.x_studio_ao"/>
                     </div>
                     
-                    <div>
+                    <div style="font-size: 80%; position: absolute; top: 9.2cm; left: 4cm">
                         <span t-esc="o.partner_id.x_studio_color"/>
                     </div>
                     
+
+                    <!-- FACTURA -->
+                    <div style="font-size: 80%; position: absolute; top: 4.7cm; left: 20cm">
+                      <span t-esc="o.invoice_ids.name"/>
+                    </div>
+                    
+                    <!--informacion dentro de tarea-->
+                    
+                    <t t-foreach="o.tasks_ids" t-as="tarea">    
+                    <!-- contacto -->
+                        <div style="font-size: 80%; position: absolute; top: 4.7cm; left: 4cm">
+                            <span t-esc="tarea.user_ids.name"/>
+                        </div>
+                    
+                    
+                                        
+                        
+                    
+                    <!-- Interior -->
+                        <t t-if="tarea.x_studio_calefaccin">
+                            <div style="font-size: 80%; position: absolute; top: 7.6cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_radio">
+                            <div style="font-size: 80%; position: absolute; top: 8.1cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_bocinas_delanteras">
+                            <div style="font-size: 80%; position: absolute; top: 8.6cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_bocinas_delanteras_1">
+                            <div style="font-size: 80%; position: absolute; top: 9.1cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_encendedor">
+                            <div style="font-size: 80%; position: absolute; top: 9.6cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_cenicero">
+                            <div style="font-size: 80%; position: absolute; top: 10.1cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_retrovisor">
+                            <div style="font-size: 80%; position: absolute; top: 10.6cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_cinturones">
+                            <div style="font-size: 80%; position: absolute; top: 11.1cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_alfombras">
+                            <div style="font-size: 80%; position: absolute; top: 11.6cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_fundas_de_asientos">
+                            <div style="font-size: 80%; position: absolute; top: 12.1cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_vidrios_laterales">
+                            <div style="font-size: 80%; position: absolute; top: 12.6cm; left: 12.7cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_jalador_de_puertas">
+                            <div style="font-size: 80%; position: absolute; top: 13.1cm; left: 12.7cm">x</div>
+                        </t>
+                        <!-- Exterior -->
+                        <t t-if="tarea.x_studio_luces_principales">
+                            <div style="font-size: 80%; position: absolute; top: 7.6cm; left: 18.1cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_stops_intermitentes">
+                            <div style="font-size: 80%; position: absolute; top: 8.1cm; left: 18.1cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_antena_de_radio">
+                            <div style="font-size: 80%; position: absolute; top: 8.6cm; left: 18.1cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_limpiabrisas">
+                            <div style="font-size: 80%; position: absolute; top: 9.1cm; left: 18.1cm">x</div>
+                        </t>
+                        
+                        <!-- Nuevo campo retrovisores -->
+                        <t t-if="tarea.x_studio_retrovisores">
+                            <div style="font-size: 80%; position: absolute; top: 9.6cm; left: 18.1cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_4_tapones_de_vlvulas">
+                            <div style="font-size: 80%; position: absolute; top: 10.1cm; left: 18.1cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_4_tapaderas_aros">
+                            <div style="font-size: 80%; position: absolute; top: 10.6cm; left: 18.1cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_placas">
+                            <div style="font-size: 80%; position: absolute; top: 11.1cm; left: 18.1cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_llantas_de_repuesto">
+                            <div style="font-size: 80%; position: absolute; top: 11.6cm; left: 18.1cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_carrocera_sin_golpes">
+                            <div style="font-size: 80%; position: absolute; top: 12.1cm; left: 18.1cm">x</div>
+                        </t>
+    
+                        <!-- Accesorios -->
+                        <t t-if="tarea.x_studio_silvines">
+                            <div style="font-size: 80%; position: absolute; top: 7.6cm; left: 23.3cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_stops">
+                            <div style="font-size: 80%; position: absolute; top: 8.1cm; left: 23.3cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_roll_bar">
+                            <div style="font-size: 80%; position: absolute; top: 8.6cm; left: 23.3cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_duraliner">
+                            <div style="font-size: 80%; position: absolute; top: 9.1cm; left: 23.3cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_linex">
+                            <div style="font-size: 80%; position: absolute; top: 9.6cm; left: 23.3cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_insignias">
+                            <div style="font-size: 80%; position: absolute; top: 10.1cm; left: 23.3cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_estribos">
+                            <div style="font-size: 80%; position: absolute; top: 10.6cm; left: 23.3cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_baranda_antigolpe">
+                            <div style="font-size: 80%; position: absolute; top: 11.1cm; left: 23.3cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_retirar_baranda">
+                            <div style="font-size: 80%; position: absolute; top: 11.6cm; left: 23.3cm">x</div>
+                        </t>
+                    </t>
+                    <!--informacion dentro de tarea-->
+                    <t t-foreach="o.tasks_ids" t-as="tarea">
+                        
+                        <!-- Tapiceria Daniada -->
+                        <t t-if="tarea.x_studio_b">
+                            <div style="font-size: 80%; position: absolute; top: 14.3cm; left: 9.7cm">x</div>
+                        </t>
+    
+                        <t t-if="tarea.x_studio_r_1">
+                            <div style="font-size: 80%; position: absolute; top: 14.3cm; left: 11.2cm">x</div>
+                        </t>
+    
+                        <t t-if="tarea.x_studio_d_1">
+                            <div style="font-size: 80%; position: absolute; top: 14.3cm; left: 12.7cm">x</div>
+                        </t>
+    
+                        <!-- Limpieza del vehiculo -->
+                        <t t-if="tarea.x_studio_l">
+                            <div style="font-size: 80%; position: absolute; top: 14.3cm; left: 14.5cm">x</div>
+                        </t>
+    
+                        <t t-if="tarea.x_studio_r_2">
+                            <div style="font-size: 80%; position: absolute; top: 14.3cm; left: 15.7cm">x</div>
+                        </t>
+    
+                        <t t-if="tarea.x_studio_s">
+                            <div style="font-size: 80%; position: absolute; top: 14.3cm; left: 17cm">x</div>
+                        </t>
+    
+                        <t t-if="tarea.x_studio_cw">
+                            <div style="font-size: 80%; position: absolute; top: 14.3cm; left: 18.5cm">x</div>
+                        </t>
+    
+                        <!-- Sensores -->
+                        <t t-if="tarea.x_studio_airbag_bolsa_de_aire == 'ACTIVO'">
+                            <div style="font-size: 80%; position: absolute; top: 15.6cm; left: 10.9cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_airbag_bolsa_de_aire == 'INACTIVO'">
+                            <div style="font-size: 80%; position: absolute; top: 16.1cm; left: 10.9cm">x</div>
+                        </t>
+    
+                        <t t-if="tarea.x_studio_motor == 'ACTIVO'">
+                            <div style="font-size: 80%; position: absolute; top: 15.6cm; left: 13.6cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_motor == 'INACTIVO'">
+                            <div style="font-size: 80%; position: absolute; top: 16.1cm; left: 13.6cm">x</div>
+                        </t>
+    
+                        <t t-if="tarea.x_studio_frenos_abs == 'ACTIVO'">
+                            <div style="font-size: 80%; position: absolute; top: 15.6cm; left: 16.5cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_frenos_abs == 'INACTIVO'">
+                            <div style="font-size: 80%; position: absolute; top: 16.1cm; left: 16.5cm">x</div>
+                        </t>
+    
+                        <t t-if="tarea.x_studio_testigo_esp == 'ACTIVO'">
+                            <div style="font-size: 80%; position: absolute; top: 15.6cm; left: 19.4cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_testigo_esp == 'INACTIVO'">
+                            <div style="font-size: 80%; position: absolute; top: 16.1cm; left: 19.4cm">x</div>
+                        </t>
+                        <t t-if="tarea.x_studio_text_field_BkfZ0">
+                            <div style="font-size: 80%; position: absolute; top: 15.6cm; left: 21.7cm">x</div>
+                            
+                            <!-- Observaciones otros -->
+                            <div style="font-size: 90%; position: absolute; top: 21.4cm; left: 3cm; width: 20cm; line-height: 0.6cm"><span t-field="tarea.x_studio_text_field_BkfZ0"/></div>
+                        </t>
+                    </t>
                     <!--ANIO observaciones o notas-->
                     <div>
                         <span t-field="o.note"/>
@@ -63,186 +251,18 @@
 
                     <!--Descripcion de productos-->
                     <div>
-                      <table>
+                      <table style="border: 0px solid white;font-size: 90%; position: absolute; top: 25cm; left: 1.5cm">
                           <t t-foreach="o.order_line" t-as="linea">
                               <tr>
-                                  <td><span t-esc="linea.product_uom_qty"/></td>
-                                  <td><span t-esc="linea.name"/></td>
-                                  <td><span t-esc="linea.price_total"/></td>
+                                  <td style="width: 2.5cm"><span t-esc="linea.product_uom_qty"/></td>
+                                  <td style="width: 15.5cm"><span t-esc="linea.name"/></td>
+                                  <td style="width: 3cm; text-align: right"><span t-esc="linea.price_total"/></td>
                               </tr>
                           </t>
                       </table>
                     </div>
-
                     
-                    <!--informacion dentro de tarea-->
-                    <t t-foreach="o.tasks_ids" t-as="tarea">
-                        <!-- Interior -->
-                        <t t-if="tarea.x_studio_calefaccin">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_radio">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_bocinas_delanteras">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_bocinas_delanteras_1">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_encendedor">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_cenicero">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_retrovisor">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_cinturones">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_alfombras">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_fundas_de_asientos">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_vidrios_laterales">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_jalador_de_puertas">
-                            <div>x</div>
-                        </t>
-    
-                        <!-- Exterior -->
-                        <t t-if="tarea.x_studio_luces_principales">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_stops_intermitentes">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_antena_de_radio">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_limpiabrisas">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_4_tapones_de_vlvulas">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_4_tapaderas_aros">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_placas">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_llantas_de_repuesto">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_carrocera_sin_golpes">
-                            <div>x</div>
-                        </t>
-    
-                        <!-- Accesorios -->
-                        <t t-if="tarea.x_studio_silvines">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_stops">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_roll_bar">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_duraliner">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_linex">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_insignias">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_estribos">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_baranda_antigolpe">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_retirar_baranda">
-                            <div>x</div>
-                        </t>
-    
-                        <!-- Tapiceria Daniada -->
-                        <t t-if="tarea.x_studio_b">
-                            <div>x</div>
-                        </t>
-    
-                        <t t-if="tarea.x_studio_r_1">
-                            <div>x</div>
-                        </t>
-    
-                        <t t-if="tarea.x_studio_d_1">
-                            <div>x</div>
-                        </t>
-    
-                        <!-- Limpieza del vehiculo -->
-                        <t t-if="tarea.x_studio_l">
-                            <div>x</div>
-                        </t>
-    
-                        <t t-if="tarea.x_studio_r_2">
-                            <div>x</div>
-                        </t>
-    
-                        <t t-if="tarea.x_studio_s">
-                            <div>x</div>
-                        </t>
-    
-                        <t t-if="tarea.x_studio_cw">
-                            <div>x</div>
-                        </t>
-    
-                        <!-- Sensores -->
-                        <t t-if="tarea.x_studio_airbag_bolsa_de_aire == 'ACTIVO'">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_airbag_bolsa_de_aire == 'INACTIVO'">
-                            <div>x</div>
-                        </t>
-    
-                        <t t-if="tarea.x_studio_motor == 'ACTIVO'">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_motor == 'INACTIVO'">
-                            <div>x</div>
-                        </t>
-    
-                        <t t-if="tarea.x_studio_frenos_abs == 'ACTIVO'">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_frenos_abs == 'INACTIVO'">
-                            <div>x</div>
-                        </t>
-    
-                        <t t-if="tarea.x_studio_testigo_esp == 'ACTIVO'">
-                            <div>x</div>
-                        </t>
-                        <t t-if="tarea.x_studio_testigo_esp == 'INACTIVO'">
-                            <div>x</div>
-                        </t>
-                        
-                        
-                        
-                        <t t-if="tarea.x_studio_text_field_BkfZ0">
-                            <div>x</div>
-                            
-                            <!-- Observaciones otros -->
-                            <div><span t-field="tarea.x_studio_text_field_BkfZ0"/></div>
-                        </t>
-                    </t>
-
-
+                    
                 </div>
             </div>
         </t>
